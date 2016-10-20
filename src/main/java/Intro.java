@@ -31,6 +31,7 @@ public class Intro {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
         while (scanner.hasNextLine()) {
             nextToken = scanner.nextLine();
             if (fileName == "input.txt") {
