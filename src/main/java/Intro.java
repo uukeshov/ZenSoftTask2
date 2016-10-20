@@ -56,7 +56,6 @@ public class Intro {
         print(resultList);
     }
 
-
     private static void modContains() {
         resultList.clear();
         for (int i = 0; i < inputList.size(); i++) {
