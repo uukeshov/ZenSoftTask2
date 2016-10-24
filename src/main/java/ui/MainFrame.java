@@ -1,14 +1,16 @@
 package ui;
 
-import factory.AppProperties;
 import service.MatchService;
 import service.MatchServiceImpl;
+import utils.Constants;
 import utils.ParsedDataSingleton;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 public class MainFrame extends JFrame {
 
@@ -51,7 +53,7 @@ public class MainFrame extends JFrame {
         gbc_lblNewLabel_1.gridy = 0;
         contentPane.add(textPanePattern, gbc_lblNewLabel_1);
 
-        firstModRB = new JRadioButton("Mod 1",true);
+        firstModRB = new JRadioButton("Mod 1", true);
         GridBagConstraints gbc_rdbtnNewRadioButton = new GridBagConstraints();
         gbc_rdbtnNewRadioButton.fill = GridBagConstraints.HORIZONTAL;
         gbc_rdbtnNewRadioButton.insets = new Insets(0, 0, 5, 5);
@@ -80,15 +82,15 @@ public class MainFrame extends JFrame {
         gbc_btnNewButton.gridy = 3;
         contentPane.add(actionButton, gbc_btnNewButton);
 
-        textField = new JLabel("New label");
+        textField = new JLabel();
         GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
         gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
         gbc_lblNewLabel_2.gridx = 4;
         gbc_lblNewLabel_2.gridy = 5;
         contentPane.add(textField, gbc_lblNewLabel_2);
 
-        textPaneInput.setText(PSD.getInputData().toString());
-        textPanePattern.setText(PSD.getPatternsData().toString());
+        textPaneInput.setText(Constants.replacer(PSD.getInputData().toString()));
+        textPanePattern.setText(Constants.replacer(PSD.getPatternsData().toString()));
     }
 
     public void showRadioButton() {
@@ -137,7 +139,7 @@ public class MainFrame extends JFrame {
                 if (getModType() == 3) {
                     matchService.DefinedEditDistanceMod();
                 }
-                textField.setText(PSD.getResultData().toString());
+                textField.setText(Constants.replacer(PSD.getResultData().toString()));
             }
         });
     }

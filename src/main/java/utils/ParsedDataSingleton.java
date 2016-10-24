@@ -43,15 +43,15 @@ public class ParsedDataSingleton {
         this.resultData = resultData;
     }
 
-    public void addInputData(String s){
-        inputData.add(s);
-    }
-
-    public void addPatters(String s){
+    public void addPatternsData(String s) {
         patternsData.add(s);
     }
 
-    public void addResultData(String s){
+    public void addInputData(String s) {
+        inputData.add(s);
+    }
+
+    public void addResultData(String s) {
         resultData.add(s);
     }
 
